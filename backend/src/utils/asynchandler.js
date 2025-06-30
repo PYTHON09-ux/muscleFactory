@@ -4,3 +4,5 @@ const asynchandler= (cb)=> {
         .catch((err)=>next(err));
     }
 }
+
+export {asynchandler}
