@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "TECH-STACK: MONGODB EXPRESS REACT NODE.JS",
+  "keywords": [
+    "gym",
+    "fitness",
+    "fullStack",
+    "MERN"
+  ],
+  "homepage": "https://github.com/PYTHON09-ux/muscleFactory#readme",
+  "bugs": {
+    "url": "https://github.com/PYTHON09-ux/muscleFactory/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PYTHON09-ux/muscleFactory.git"
+  },
+  "license": "MIT",
+  "author": "pavan patane",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
+    "cookieparser": "^0.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.1",
+    "mongoose-aggregate-paginate-v2": "^1.1.4",
+    "multer": "^2.0.1",
+    "prettier": "^3.6.2"
+  }
+}
