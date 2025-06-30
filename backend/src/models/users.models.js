@@ -1,6 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema({
+    
+    profilePicture: {
+        type: String,
+        default: null
+    },
+    
     username: {
         type: String,
         required: true,
@@ -10,6 +16,15 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true
+    },
+    birthDate: {
+        type: Date,
+        required: true
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other'],
+        required: true
     },
     password: {
         type: String,
@@ -32,9 +47,9 @@ const userSchema = new Schema({
         default: 'user'
     },
     memberShipType: {
-        type: String,
-        enum: ['basic', 'premium', 'gold'],
-        default: 'basic'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Membership',
+        default: null
     },
     isActive: {
         type: Boolean,
