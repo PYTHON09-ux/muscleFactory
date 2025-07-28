@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv/config.js';
-import { clerkMiddleware, getAuth, requireAuth } from '@clerk/express'
 import {requireRole} from './middlewares/auth.middleware.js';
 
 
@@ -12,10 +11,6 @@ const app = express();
 app.use(cors({
     origin: process.env.CORS_ORIGIN || '*',
     credentials: true
-}));
-
-app.use(clerkMiddleware({
-    secretKey: process.env.CLERK_SECRET_KEY
 }));
 
 app.use(express.json({limit: '50mb'}));
@@ -33,7 +28,7 @@ import errorRoute from './routes/error.route.js';
 
 //declare routes here 
 
-app.use('/api/v1/users',requireAuth(), requireRole('admin'), userRoutes);
+app.use('/api/v1/admin',requireAuth(), requireRole('admin'), userRoutes);
 app.use('/api/v1/error', errorRoute);
 export {app};
 // This is the main application file for the backend.
